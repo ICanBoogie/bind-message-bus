@@ -25,7 +25,13 @@ $bus = $app->message_bus;
 
 
 
-## Application getters
+## Bindings
+
+
+
+
+
+### Application bindings
 
 The following getters are added to the [Application][] class:
 
@@ -34,6 +40,18 @@ The following getters are added to the [Application][] class:
 - `message_handler_provider`: A [MessageHandlerProvider][] instance configured with the
 `message-bus-handlers` config.
 - `message_pusher`: A [MessagePusher][] instance.
+
+
+
+
+
+### Controller bindings
+
+The following method is added to the [Controller][] class:
+
+- `mixed dispatch_message(Message $message)`: Dispatch a message using `$this->app->command_bus`.
+
+Use the [ControllerBindings][] with your controller to type hint the bindings.
 
 
 
@@ -141,10 +159,12 @@ The package is continuously tested by [Travis CI](http://about.travis-ci.org/).
 
 
 [Application]:                  https://icanboogie.org/docs/4.0/the-application-class
+[Controller]:                   https://api.icanboogie.org/routing/latest/class-ICanBoogie.Routing.Controller.html
 [MessageBus]:                   https://api.icanboogie.org/message-bus/latest/class-ICanBoogie.MessageBus.MessageBus.html
 [MessageHandlerProvider]:       https://api.icanboogie.org/message-bus/latest/class-ICanBoogie.MessageBus.MessageHandlerProvider.html
 [MessagePusher]:                https://api.icanboogie.org/message-bus/latest/class-ICanBoogie.MessageBus.MessagePusher.html
 [documentation]:                https://api.icanboogie.org/bind-message-bus/latest/
+[ControllerBindings]:           https://api.icanboogie.org/bind-message-bus/latest/class-ICanBoogie.bind-message-bus.ControllerBindings.html
 [available on GitHub]:          https://github.com/ICanBoogie/bind-message-bus
 [icanboogie/message-bus]:       https://github.com/ICanBoogie/message-bus
 [icanboogie/service]:           https://github.com/ICanBoogie/Service

@@ -12,10 +12,13 @@
 namespace ICanBoogie\Binding\MessageBus;
 
 use ICanBoogie\Application;
+use ICanBoogie\Binding\PrototypedBindings;
+use ICanBoogie\MessageBus\Message;
 use ICanBoogie\MessageBus\MessageBus;
 use ICanBoogie\MessageBus\MessageHandlerProvider;
 use ICanBoogie\MessageBus\SimpleMessageBus;
 use ICanBoogie\MessageBus\SimpleMessageHandlerProvider;
+use ICanBoogie\Routing\Controller;
 
 class Hooks
 {
@@ -79,5 +82,16 @@ class Hooks
 		// don't know how to push messages yet
 
 		return null;
+	}
+
+	/**
+	 * @param Controller|PrototypedBindings $controller
+	 * @param Message $message
+	 *
+	 * @return mixed
+	 */
+	static public function dispatch_message(Controller $controller, Message $message)
+	{
+		return $controller->app->message_bus->dispatch($message);
 	}
 }
