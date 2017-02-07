@@ -1,0 +1,55 @@
+{
+	"name": "icanboogie/bind-message-bus",
+	"type": "library",
+	"description": "Binds icanboogie/message-bus to ICanBoogie",
+	"keywords": [
+		"message",
+		"bus"
+	],
+	"homepage": "http://icanboogie.org/",
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Olivier Laviale",
+			"email": "olivier.laviale@gmail.com",
+			"homepage": "https://olvlvl.com/",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/ICanBoogie/bind-message-bus/issues",
+		"source": "https://github.com/ICanBoogie/bind-message-bus"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"prefer-dist": true,
+	"require": {
+		"php": ">=5.6",
+		"icanboogie/icanboogie": "^4.0",
+		"icanboogie/message-bus": "dev-master"
+	},
+	"autoload": {
+		"psr-4": {
+			"ICanBoogie\\Binding\\MessageBus\\": "lib/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"ICanBoogie\\Binding\\MessageBus\\": "tests/lib/"
+		},
+		"classmap": [
+			"tests/Application.php"
+		]
+	},
+	"scripts": {
+		"post-autoload-dump": "ICanBoogie\\Autoconfig\\Hooks::on_autoload_dump"
+	},
+	"extra": {
+		"icanboogie": {
+			"config-path": "config",
+			"config-constructor": {
+				"message-bus-handlers": "ICanBoogie\\Binding\\MessageBus\\Hooks::synthesize_handlers_config#message-bus"
+			}
+		}
+	}
+}
