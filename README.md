@@ -158,14 +158,14 @@ The package is continuously tested by [Travis CI](http://about.travis-ci.org/).
 
 
 
+[ICanBoogie]:                   https://icanboogie.org
+[MessageBus]:                   https://icanboogie.org/api/message-bus/master/class-ICanBoogie.MessageBus.MessageBus.html
+[MessageHandlerProvider]:       https://icanboogie.org/api/message-bus/master/class-ICanBoogie.MessageBus.MessageHandlerProvider.html
+[MessagePusher]:                https://icanboogie.org/api/message-bus/master/class-ICanBoogie.MessageBus.MessagePusher.html
+[Controller]:                   https://icanboogie.org/api/routing/master/class-ICanBoogie.Routing.Controller.html
+[documentation]:                https://icanboogie.org/api/bind-message-bus/master/
+[ControllerBindings]:           https://icanboogie.org/api/bind-message-bus/master/class-ICanBoogie.bind-message-bus.ControllerBindings.html
 [Application]:                  https://icanboogie.org/docs/4.0/the-application-class
-[Controller]:                   https://api.icanboogie.org/routing/latest/class-ICanBoogie.Routing.Controller.html
-[MessageBus]:                   https://api.icanboogie.org/message-bus/latest/class-ICanBoogie.MessageBus.MessageBus.html
-[MessageHandlerProvider]:       https://api.icanboogie.org/message-bus/latest/class-ICanBoogie.MessageBus.MessageHandlerProvider.html
-[MessagePusher]:                https://api.icanboogie.org/message-bus/latest/class-ICanBoogie.MessageBus.MessagePusher.html
-[documentation]:                https://api.icanboogie.org/bind-message-bus/latest/
-[ControllerBindings]:           https://api.icanboogie.org/bind-message-bus/latest/class-ICanBoogie.bind-message-bus.ControllerBindings.html
 [available on GitHub]:          https://github.com/ICanBoogie/bind-message-bus
 [icanboogie/message-bus]:       https://github.com/ICanBoogie/message-bus
 [icanboogie/service]:           https://github.com/ICanBoogie/Service
-[ICanBoogie]:                   https://icanboogie.org
