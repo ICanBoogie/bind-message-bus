@@ -11,9 +11,7 @@
 
 namespace ICanBoogie\Binding\MessageBus;
 
-use ICanBoogie\MessageBus\Message;
-
-class MessageC implements Message
+class MessageC
 {
 
 }

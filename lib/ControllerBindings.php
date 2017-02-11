@@ -11,12 +11,10 @@
 
 namespace ICanBoogie\Binding\MessageBus;
 
-use ICanBoogie\MessageBus\Message;
-
 /**
  * Prototype bindings for {@link \ICanBoogie\Routing\Controller}.
  *
- * @method mixed dispatch_message(Message $message)
+ * @method mixed dispatch_message($message)
  */
 trait ControllerBindings
 {
