@@ -2,7 +2,6 @@
 
 [![Packagist](https://img.shields.io/packagist/v/icanboogie/bind-message-bus.svg)](https://packagist.org/packages/icanboogie/bind-message-bus)
 [![Build Status](https://img.shields.io/travis/ICanBoogie/bind-message-bus.svg)](http://travis-ci.org/ICanBoogie/bind-message-bus)
-[![HHVM](https://img.shields.io/hhvm/ICanBoogie/bind-message-bus.svg)](http://hhvm.h4cc.de/package/ICanBoogie/bind-message-bus)
 [![Code Quality](https://img.shields.io/scrutinizer/g/ICanBoogie/bind-message-bus.svg)](https://scrutinizer-ci.com/g/ICanBoogie/bind-message-bus)
 [![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/bind-message-bus.svg)](https://coveralls.io/r/ICanBoogie/bind-message-bus)
 [![Downloads](https://img.shields.io/packagist/dt/icanboogie/bind-message-bus.svg)](https://packagist.org/packages/icanboogie/bind-message-bus/stats)
