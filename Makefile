@@ -1,7 +1,7 @@
 # customization
 
 PACKAGE_NAME = icanboogie/bind-message-bus
-PACKAGE_VERSION = 0.1
+PACKAGE_VERSION = 0.2
 PHPUNIT_VERSION = phpunit-5.7.phar
 PHPUNIT_FILENAME = build/$(PHPUNIT_VERSION)
 PHPUNIT = php $(PHPUNIT_FILENAME)

@@ -13,10 +13,10 @@ namespace ICanBoogie\Binding\MessageBus;
 
 use ICanBoogie\Application;
 use ICanBoogie\Binding\PrototypedBindings;
-use ICanBoogie\MessageBus\MessageBus;
-use ICanBoogie\MessageBus\MessageHandlerProvider;
-use ICanBoogie\MessageBus\SimpleMessageBus;
-use ICanBoogie\MessageBus\SimpleMessageHandlerProvider;
+use ICanBoogie\MessageBus\Dispatcher;
+use ICanBoogie\MessageBus\HandlerProvider;
+use ICanBoogie\MessageBus\SimpleDispatcher;
+use ICanBoogie\MessageBus\SimpleHandlerProvider;
 use ICanBoogie\Routing\Controller;
 
 class Hooks
@@ -54,33 +54,21 @@ class Hooks
 	/**
 	 * @param Application $app
 	 *
-	 * @return MessageBus
+	 * @return Dispatcher
 	 */
 	static public function get_message_bus(Application $app)
 	{
-		return new SimpleMessageBus($app->message_handler_provider, $app->message_pusher);
+		return new SimpleDispatcher($app->message_handler_provider);
 	}
 
 	/**
 	 * @param Application $app
 	 *
-	 * @return MessageHandlerProvider
+	 * @return HandlerProvider
 	 */
 	static public function get_message_handler_provider(Application $app)
 	{
-		return new SimpleMessageHandlerProvider($app->configs[MessageBusConfig::HANDLERS_CONFIG_NAME]);
-	}
-
-	/**
-	 * @param Application $app
-	 *
-	 * @return null
-	 */
-	static public function get_message_pusher(Application $app)
-	{
-		// don't know how to push messages yet
-
-		return null;
+		return new SimpleHandlerProvider($app->configs[MessageBusConfig::HANDLERS_CONFIG_NAME]);
 	}
 
 	/**

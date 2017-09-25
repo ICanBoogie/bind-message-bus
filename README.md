@@ -11,11 +11,11 @@ The **icanboogie/bind-message-bus** package binds [icanboogie/message-bus][] to 
 ```php
 <?php
 
-use ICanBoogie\MessageBus\SimpleMessageBus;
+use ICanBoogie\MessageBus\SimpleDispatcher;
 
 /* @var \ICanBoogie\Application $app */
 
-$bus = new SimpleMessageBus($app->message_handler_provider, $app->message_pusher);
+$bus = new SimpleDispatcher($app->message_handler_provider);
 # or
 $bus = $app->message_bus;
 ```
@@ -34,11 +34,10 @@ $bus = $app->message_bus;
 
 The following getters are added to the [Application][] class:
 
-- `message_bus`: A [MessageBus][] instance created with `$app->message_handler_provider` and
+- `message_bus`: A [Dispatcher][] instance created with `$app->message_handler_provider` and
 `$app->message_pusher`.
-- `message_handler_provider`: A [MessageHandlerProvider][] instance configured with the
+- `message_handler_provider`: A [HandlerProvider][] instance configured with the
 `message-bus-handlers` config.
-- `message_pusher`: A [MessagePusher][] instance.
 
 ```php
 <?php
@@ -47,7 +46,6 @@ The following getters are added to the [Application][] class:
 
 $app->message_bus;
 $app->message_handler_provider;
-$app->message_pusher;
 ```
 
 
@@ -191,9 +189,8 @@ The package is continuously tested by [Travis CI](http://about.travis-ci.org/).
 
 
 [ICanBoogie]:                   https://icanboogie.org
-[MessageBus]:                   https://icanboogie.org/api/message-bus/master/class-ICanBoogie.MessageBus.MessageBus.html
-[MessageHandlerProvider]:       https://icanboogie.org/api/message-bus/master/class-ICanBoogie.MessageBus.MessageHandlerProvider.html
-[MessagePusher]:                https://icanboogie.org/api/message-bus/master/class-ICanBoogie.MessageBus.MessagePusher.html
+[Dispatcher]:                   https://icanboogie.org/api/message-bus/master/class-ICanBoogie.MessageBus.Dispatcher.html
+[HandlerProvider]:              https://icanboogie.org/api/message-bus/master/class-ICanBoogie.MessageBus.HandlerProvider.html
 [Controller]:                   https://icanboogie.org/api/routing/master/class-ICanBoogie.Routing.Controller.html
 [documentation]:                https://icanboogie.org/api/bind-message-bus/master/
 [ControllerBindings]:           https://icanboogie.org/api/bind-message-bus/master/class-ICanBoogie.Binding.MessageBus.ControllerBindings.html

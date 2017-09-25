@@ -11,8 +11,8 @@
 
 namespace ICanBoogie\Binding\MessageBus;
 
-use ICanBoogie\MessageBus\MessageBus;
-use ICanBoogie\MessageBus\MessageHandlerProvider;
+use ICanBoogie\MessageBus\Dispatcher;
+use ICanBoogie\MessageBus\HandlerProvider;
 use function ICanBoogie\app;
 
 class BindingTest extends \PHPUnit_Framework_TestCase
@@ -55,9 +55,8 @@ class BindingTest extends \PHPUnit_Framework_TestCase
 	{
 		return [
 
-			[ 'message_bus',              MessageBus::class ],
-			[ 'message_handler_provider', MessageHandlerProvider::class ],
-			[ 'message_pusher',           null ],
+			[ 'message_bus',              Dispatcher::class ],
+			[ 'message_handler_provider', HandlerProvider::class ],
 
 		];
 	}

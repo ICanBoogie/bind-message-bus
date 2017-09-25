@@ -11,16 +11,14 @@
 
 namespace ICanBoogie\Binding\MessageBus;
 
-use ICanBoogie\MessageBus\MessageBus;
-use ICanBoogie\MessageBus\MessageHandlerProvider;
-use ICanBoogie\MessageBus\MessagePusher;
+use ICanBoogie\MessageBus\Dispatcher;
+use ICanBoogie\MessageBus\HandlerProvider;
 
 /**
  * Prototype bindings for {@link \ICanBoogie\Application}.
  *
- * @property-read MessageBus $message_bus
- * @property-read MessageHandlerProvider $message_handler_provider
- * @property-read MessagePusher $message_pusher
+ * @property-read Dispatcher $message_bus
+ * @property-read HandlerProvider $message_handler_provider
  */
 trait ApplicationBindings
 {

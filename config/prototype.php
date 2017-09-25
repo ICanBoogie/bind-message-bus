@@ -17,7 +17,6 @@ return [
 
 	'ICanBoogie\Application::lazy_get_message_bus'              => $hooks . 'get_message_bus',
 	'ICanBoogie\Application::lazy_get_message_handler_provider' => $hooks . 'get_message_handler_provider',
-	'ICanBoogie\Application::lazy_get_message_pusher'           => $hooks . 'get_message_pusher',
 	'ICanBoogie\Routing\Controller::dispatch_message'           => $hooks . 'dispatch_message',
 
 ];

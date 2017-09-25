@@ -26,7 +26,7 @@
 	"require": {
 		"php": ">=5.6",
 		"icanboogie/icanboogie": "^4.0",
-		"icanboogie/message-bus": "^0.2"
+		"icanboogie/message-bus": "^0.4"
 	},
 	"autoload": {
 		"psr-4": {
