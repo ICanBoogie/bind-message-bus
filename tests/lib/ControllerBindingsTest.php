@@ -14,7 +14,7 @@ namespace ICanBoogie\Binding\MessageBus;
 use ICanBoogie\HTTP\Request;
 use ICanBoogie\Routing\ClosureController;
 
-class ControllerBindingsTest extends \PHPUnit_Framework_TestCase
+class ControllerBindingsTest extends \PHPUnit\Framework\TestCase
 {
 	public function test_should_dispatch_message_from_controller()
 	{

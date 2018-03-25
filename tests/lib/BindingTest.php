@@ -15,7 +15,7 @@ use ICanBoogie\MessageBus\Dispatcher;
 use ICanBoogie\MessageBus\HandlerProvider;
 use function ICanBoogie\app;
 
-class BindingTest extends \PHPUnit_Framework_TestCase
+class BindingTest extends \PHPUnit\Framework\TestCase
 {
 	public function test_should_have_handlers_config()
 	{

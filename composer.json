@@ -24,9 +24,9 @@
 	"prefer-stable": true,
 	"prefer-dist": true,
 	"require": {
-		"php": ">=5.6",
-		"icanboogie/icanboogie": "^4.0",
-		"icanboogie/message-bus": "^0.4"
+		"php": "^7.2",
+		"icanboogie/icanboogie": "^5.0",
+		"icanboogie/message-bus": "^0.6"
 	},
 	"autoload": {
 		"psr-4": {

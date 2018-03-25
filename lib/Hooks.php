@@ -44,7 +44,7 @@ class Hooks
 			$handler_collection[] = $fragment[MessageBusConfig::HANDLERS];
 		}
 
-		return array_merge(...$handler_collection);
+		return \array_merge(...$handler_collection);
 	}
 
 	/*
