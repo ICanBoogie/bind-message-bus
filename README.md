@@ -85,7 +85,7 @@ class ProductController extends Controller
 
 
 ## Configuration
- 
+
 The `message-bus` config is used to configure the message bus. Message handlers are defined with an
 array of key/pair values with key `MessageBusConfig::HANDLERS`, where _key_ is a message class and
 _value_ its handler (a callable).
@@ -125,7 +125,7 @@ return [
 
 ## Requirements
 
-The package requires PHP 5.6 or later.
+The package requires PHP 7.2 or later.
 
 
 
@@ -133,20 +133,9 @@ The package requires PHP 5.6 or later.
 
 ## Installation
 
-The recommended way to install this package is through [Composer](http://getcomposer.org/):
-
-	$ composer require icanboogie/bind-message-bus
-
-
-
-
-
-### Cloning the repository
-
-The package is [available on GitHub][], its repository can be cloned with the following command
-line:
-
-	$ git clone https://github.com/ICanBoogie/bind-message-bus.git
+```bash
+composer require icanboogie/bind-message-bus
+```
 
 
 
@@ -165,16 +154,9 @@ The directory can later be cleaned with the `make clean` command.
 
 ## Testing
 
-The test suite is ran with the `make test` command. [PHPUnit](https://phpunit.de/) and
-[Composer](http://getcomposer.org/) need to be globally available to run the suite. The command
-installs dependencies as required. The `make test-coverage` command runs test suite and also creates
-an HTML coverage report in `build/coverage`. The directory can later be cleaned with the `make
-clean` command.
-
-The package is continuously tested by [Travis CI](http://about.travis-ci.org/).
-
-[![Build Status](https://img.shields.io/travis/ICanBoogie/bind-message-bus.svg)](http://travis-ci.org/ICanBoogie/bind-message-bus)
-[![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/bind-message-bus.svg)](https://coveralls.io/r/ICanBoogie/bind-message-bus)
+Run `make test-container` to create and log into the test container, then run `make test` to run the
+test suite. Alternatively, run `make test-coverage` to run the test suite with test coverage. Open
+`build/coverage/index.html` to see the breakdown of the code coverage.
 
 
 
@@ -182,7 +164,7 @@ The package is continuously tested by [Travis CI](http://about.travis-ci.org/).
 
 ## License
 
-**icanboogie/bind-message-bus** is licensed under the New BSD License - See the [LICENSE](LICENSE) file for details.
+**icanboogie/bind-message-bus** is released under the [New BSD License](LICENSE).
 
 
 

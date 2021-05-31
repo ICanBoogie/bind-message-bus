@@ -20,13 +20,16 @@
 		"issues": "https://github.com/ICanBoogie/bind-message-bus/issues",
 		"source": "https://github.com/ICanBoogie/bind-message-bus"
 	},
+	"config": {
+		"sort-packages": true
+	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"prefer-dist": true,
 	"require": {
-		"php": "^7.2",
+		"php": ">=7.2",
 		"icanboogie/icanboogie": "^5.0",
-		"icanboogie/message-bus": "^0.6"
+		"icanboogie/message-bus": "^1.0"
 	},
 	"autoload": {
 		"psr-4": {
@@ -51,5 +54,8 @@
 				"message-bus-handlers": "ICanBoogie\\Binding\\MessageBus\\Hooks::synthesize_handlers_config#message-bus"
 			}
 		}
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^8.5"
 	}
 }
