@@ -1,7 +1,7 @@
 # bind-message-bus
 
 [![Packagist](https://img.shields.io/packagist/v/icanboogie/bind-message-bus.svg)](https://packagist.org/packages/icanboogie/bind-message-bus)
-[![Build Status](https://img.shields.io/travis/ICanBoogie/bind-message-bus.svg)](http://travis-ci.org/ICanBoogie/bind-message-bus)
+[![Build Status](https://img.shields.io/github/workflow/status/ICanBoogie/bind-message-bus/test)](https://github.com/ICanBoogie/bind-message-bus/actions?query=workflow%3Atest)
 [![Code Quality](https://img.shields.io/scrutinizer/g/ICanBoogie/bind-message-bus.svg)](https://scrutinizer-ci.com/g/ICanBoogie/bind-message-bus)
 [![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/bind-message-bus.svg)](https://coveralls.io/r/ICanBoogie/bind-message-bus)
 [![Downloads](https://img.shields.io/packagist/dt/icanboogie/bind-message-bus.svg)](https://packagist.org/packages/icanboogie/bind-message-bus/stats)
@@ -67,16 +67,16 @@ use ICanBoogie\Routing\Controller;
 
 class ProductController extends Controller
 {
-	use Controller\ActionTrait;
-	use \ICanBoogie\Binding\MessageBus\ControllerBindings;
+    use Controller\ActionTrait;
+    use \ICanBoogie\Binding\MessageBus\ControllerBindings;
 
-	protected function action_create()
-	{
-		$message = new CreateProduct($this->request['payload']);
-		$result = $this->dispatch_message($message);
+    protected function action_create()
+    {
+        $message = new CreateProduct($this->request['payload']);
+        $result = $this->dispatch_message($message);
 
-		return $this->respond($result);
-	}
+        return $this->respond($result);
+    }
 }
 ```
 
@@ -103,12 +103,12 @@ use ICanBoogie\Binding\MessageBus\MessageBusConfig;
 
 return [
 
-	MessageBusConfig::HANDLERS => [
+    MessageBusConfig::HANDLERS => [
 
-	    CreateArticle::class => ref('handler.article.create'),
-	    DeleteArticle::class => ref('handler.article.delete'),
+        CreateArticle::class => ref('handler.article.create'),
+        DeleteArticle::class => ref('handler.article.delete'),
 
-	]
+    ]
 
 ];
 ```
