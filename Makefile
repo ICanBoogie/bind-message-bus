@@ -2,21 +2,23 @@
 
 PACKAGE_NAME = icanboogie/bind-message-bus
 PHPUNIT = vendor/bin/phpunit
+SERVICES_DST = config/services.yml
+SERVICES_SRC = vendor/icanboogie/message-bus/lib/Symfony/services.yaml
 
 # do not edit the following lines
 
-.PHONY: usage
-usage:
-	@echo "test:  Runs the test suite.\ndoc:   Creates the documentation.\nclean: Removes the documentation, the dependencies and the Composer files."
+all: vendor $(SERVICES_DST)
 
 vendor:
 	@composer install
 
-.PHONY: update
-update:
-	@composer update
+$(SERVICES_DST): $(SERVICES_SRC)
+	cp $^ $@
 
-test-dependencies: vendor
+# testing
+
+.PHONY: test-dependencies
+test-dependencies: vendor $(SERVICES_DST)
 
 .PHONY: test
 test: test-dependencies
@@ -25,7 +27,7 @@ test: test-dependencies
 .PHONY: test-coverage
 test-coverage: test-dependencies
 	@mkdir -p build/coverage
-	@$(PHPUNIT) --coverage-html ../build/coverage --coverage-text
+	@XDEBUG_MODE=coverage $(PHPUNIT) --coverage-html ../build/coverage
 
 .PHONY: test-coveralls
 test-coveralls: test-dependencies
@@ -37,17 +39,7 @@ test-container:
 	@-docker-compose run --rm app bash
 	@docker-compose down -v
 
-.PHONY: doc
-doc: vendor
-	@mkdir -p build/docs
-	@apigen generate \
-	--source lib \
-	--destination build/docs/ \
-	--title "$(PACKAGE_NAME)" \
-	--template-theme "bootstrap"
-
-.PHONY: clean
-clean:
-	@rm -fR build
-	@rm -fR vendor
-	@rm -f composer.lock
+.PHONY: lint
+lint:
+	@XDEBUG_MODE=off phpcs -s
+	@XDEBUG_MODE=off vendor/bin/phpstan

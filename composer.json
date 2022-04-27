@@ -27,18 +27,17 @@
 	"prefer-stable": true,
 	"prefer-dist": true,
 	"require": {
-		"php": ">=7.2",
-		"icanboogie/icanboogie": "^5.0",
-		"icanboogie/message-bus": "^1.0"
+		"php": ">=8.1",
+		"icanboogie/icanboogie": "^6.0",
+		"icanboogie/message-bus": "^2.1"
 	},
-	"autoload": {
-		"psr-4": {
-			"ICanBoogie\\Binding\\MessageBus\\": "lib/"
-		}
+	"require-dev": {
+		"phpstan/phpstan": "^1.6",
+		"phpunit/phpunit": "^9.5"
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"ICanBoogie\\Binding\\MessageBus\\": "tests/lib/"
+			"Test\\ICanBoogie\\Binding\\MessageBus\\": "tests/lib"
 		},
 		"classmap": [
 			"tests/Application.php"
@@ -49,13 +48,7 @@
 	},
 	"extra": {
 		"icanboogie": {
-			"config-path": "config",
-			"config-constructor": {
-				"message-bus-handlers": "ICanBoogie\\Binding\\MessageBus\\Hooks::synthesize_handlers_config#message-bus"
-			}
+			"config-path": "config"
 		}
-	},
-	"require-dev": {
-		"phpunit/phpunit": "^8.5"
 	}
 }

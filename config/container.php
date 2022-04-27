@@ -9,18 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace ICanBoogie\Binding\MessageBus;
+use ICanBoogie\Binding\SymfonyDependencyInjection\ConfigBuilder;
+use ICanBoogie\MessageBus\Symfony\MessageBusPass;
 
-return [
-
-	MessageBusConfig::HANDLERS => [
-
-		MessageC::class => function (MessageC $message) {
-
-			return get_class($message);
-
-		}
-
-	]
-
-];
+return fn(ConfigBuilder $config) => $config
+    ->add_compiler_pass(MessageBusPass::class);

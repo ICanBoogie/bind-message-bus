@@ -9,8 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace ICanBoogie;
+namespace Test\ICanBoogie\Binding\MessageBus;
 
-class Application extends ApplicationAbstract
+final class MessageBHandler
 {
+    public function __invoke(MessageB $message): string
+    {
+        return $message::class;
+    }
 }

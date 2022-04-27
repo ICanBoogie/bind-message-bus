@@ -1,0 +1,4 @@
+services:
+  Test\ICanBoogie\Binding\MessageBus\MessageCHandler:
+    tags:
+    - { name: message_bus.handler, message: Test\ICanBoogie\Binding\MessageBus\MessageC }

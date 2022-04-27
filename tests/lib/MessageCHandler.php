@@ -9,14 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace ICanBoogie\Binding\MessageBus;
+namespace Test\ICanBoogie\Binding\MessageBus;
 
-/**
- * Prototype bindings for {@link \ICanBoogie\Routing\Controller}.
- *
- * @method mixed dispatch_message($message)
- */
-trait ControllerBindings
+final class MessageCHandler
 {
-
+    public function __invoke(MessageC $message): string
+    {
+        return $message::class;
+    }
 }

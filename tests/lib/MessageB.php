@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace ICanBoogie\Binding\MessageBus;
+namespace Test\ICanBoogie\Binding\MessageBus;
 
 class MessageB
 {

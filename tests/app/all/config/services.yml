@@ -1,0 +1,12 @@
+services:
+  Test\ICanBoogie\Binding\MessageBus\MessageAHandler:
+    tags:
+    - { name: message_bus.handler, message: Test\ICanBoogie\Binding\MessageBus\MessageA }
+
+  Test\ICanBoogie\Binding\MessageBus\MessageBHandler:
+    tags:
+    - { name: message_bus.handler, message: Test\ICanBoogie\Binding\MessageBus\MessageB }
+
+  test.message_dispatcher:
+    alias: ICanBoogie\MessageBus\Dispatcher
+    public: true
