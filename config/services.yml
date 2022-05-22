@@ -10,26 +10,39 @@ services:
   _defaults:
     autowire: true
 
+  # interfaces
+
+  ICanBoogie\MessageBus\HandlerProvider:
+    alias: ICanBoogie\MessageBus\PSR\HandlerProviderWithContainer
+
+  ICanBoogie\MessageBus\Dispatcher:
+    alias: ICanBoogie\MessageBus\DispatcherWithHandlerProvider
+
+  ICanBoogie\MessageBus\Voter:
+    alias: ICanBoogie\MessageBus\VoterWithPermissions
+
   ICanBoogie\MessageBus\VoterProvider:
-    class: ICanBoogie\MessageBus\PSR\VoterProviderWithContainer
+    alias: ICanBoogie\MessageBus\PSR\VoterProviderWithContainer
+
+  ICanBoogie\MessageBus\RestrictedDispatcher:
+    alias: ICanBoogie\MessageBus\RestrictedDispatcherWithVoter
+
+  # implementations
+
+  ICanBoogie\MessageBus\PSR\HandlerProviderWithContainer:
     arguments:
-    - !tagged_locator { tag: message_bus.voter, index_by: permission }
-    - '%message_bus.permission_to_voter%'
+    - !tagged_locator { tag: message_bus.handler }
+    - '%message_bus.message_to_handler%'
+
+  ICanBoogie\MessageBus\DispatcherWithHandlerProvider: ~
 
   ICanBoogie\MessageBus\VoterWithPermissions:
     arguments:
       $permissionsByMessage: '%message_bus.permissions_by_message%'
 
-  ICanBoogie\MessageBus\HandlerProvider:
-    class: ICanBoogie\MessageBus\PSR\ContainerHandlerProvider
+  ICanBoogie\MessageBus\PSR\VoterProviderWithContainer:
     arguments:
-    - !tagged_locator { tag: message_bus.handler }
-    - '%message_bus.message_to_handler%'
+    - !tagged_locator { tag: message_bus.voter, index_by: permission }
+    - '%message_bus.permission_to_voter%'
 
-  ICanBoogie\MessageBus\Dispatcher:
-    class: ICanBoogie\MessageBus\SimpleDispatcher
-
-  ICanBoogie\MessageBus\RestrictedDispatcher:
-    class: ICanBoogie\MessageBus\RestrictedDispatcherWithVoter
-    arguments:
-      $voter: '@ICanBoogie\MessageBus\VoterWithPermissions'
+  ICanBoogie\MessageBus\RestrictedDispatcherWithVoter: ~
