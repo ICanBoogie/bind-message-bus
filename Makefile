@@ -36,7 +36,7 @@ test-coveralls: test-dependencies
 
 .PHONY: test-container
 test-container:
-	@-docker-compose run --rm app bash
+	@-docker-compose run --rm app84 bash
 	@docker-compose down -v
 
 .PHONY: lint

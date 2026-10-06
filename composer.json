@@ -21,30 +21,27 @@
 		"source": "https://github.com/ICanBoogie/bind-message-bus"
 	},
 	"config": {
-		"sort-packages": true
+		"sort-packages": true,
+		"allow-plugins": {
+			"icanboogie/autoconfig": true
+		}
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"prefer-dist": true,
 	"require": {
-		"php": ">=8.1",
-		"icanboogie/icanboogie": "^6.0",
-		"icanboogie/message-bus": "^3.0"
+		"php": ">=8.4",
+		"icanboogie/icanboogie": "^7.0",
+		"icanboogie/message-bus": "^7.0"
 	},
 	"require-dev": {
-		"phpstan/phpstan": "^1.6",
-		"phpunit/phpunit": "^9.5"
+		"phpstan/phpstan": "^2.3",
+		"phpunit/phpunit": "^13.4"
 	},
 	"autoload-dev": {
 		"psr-4": {
 			"Test\\ICanBoogie\\Binding\\MessageBus\\": "tests/lib"
-		},
-		"classmap": [
-			"tests/Application.php"
-		]
-	},
-	"scripts": {
-		"post-autoload-dump": "ICanBoogie\\Autoconfig\\Hooks::on_autoload_dump"
+		}
 	},
 	"extra": {
 		"icanboogie": {
