@@ -3,22 +3,17 @@
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/13.4/phpunit.xsd"
          beStrictAboutCoverageMetadata="true"
          beStrictAboutOutputDuringTests="true"
-         bootstrap="tests/bootstrap.php" colors="true"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
          displayDetailsOnTestsThatTriggerDeprecations="true"
          displayDetailsOnTestsThatTriggerNotices="true"
          displayDetailsOnTestsThatTriggerWarnings="true"
          displayDetailsOnPhpunitDeprecations="true"
          displayDetailsOnPhpunitNotices="true"
-         executionOrder="defects"
-         resolveDependencies="true">
+         executionOrder="defects">
     <testsuites>
         <testsuite name="icanboogie/bind-message-bus">
-            <directory>tests</directory>
+            <directory>tests/src</directory>
         </testsuite>
     </testsuites>
-    <source>
-        <include>
-            <directory>lib</directory>
-        </include>
-    </source>
 </phpunit>

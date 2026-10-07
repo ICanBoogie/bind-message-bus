@@ -11,7 +11,6 @@
 
 namespace Test\ICanBoogie\Binding\MessageBus;
 
-class MessageA
+readonly class MessageA
 {
-
 }

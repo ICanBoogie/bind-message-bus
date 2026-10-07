@@ -24,14 +24,13 @@ final class ContainerTest extends TestCase
     {
         parent::setUp();
 
-        $this->dispatcher = app()->container->get('test.message_dispatcher'); // @phpstan-ignore-line
+        $this->dispatcher = app()->service_for_id('test.message_dispatcher', Dispatcher::class);
     }
 
     public function test_dispatch(): void
     {
-        $this->assertEquals(
-            MessageA::class,
-            $this->dispatcher->dispatch(new MessageA())
-        );
+        $actual = $this->dispatcher->dispatch(new MessageA());
+
+        $this->assertEquals(MessageA::class, $actual);
     }
 }

@@ -12,9 +12,10 @@ jobs:
       matrix:
         php-version:
         - "8.4"
+        - "8.5"
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Install PHP
       uses: shivammathur/setup-php@v2
       with:
@@ -35,12 +36,4 @@ jobs:
       run: composer install --no-interaction --no-progress
 
     - name: Run PHPUnit
-      run: make test-coveralls
-
-    - name: Upload code coverage
-      if: ${{ matrix.php-version == '8.4' }}
-      env:
-        COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        composer global require php-coveralls/php-coveralls
-        php-coveralls --coverage_clover=build/logs/clover.xml -v
+      run: make test

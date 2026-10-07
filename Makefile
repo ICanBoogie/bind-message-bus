@@ -1,6 +1,5 @@
 # customization
 
-PACKAGE_NAME = icanboogie/bind-message-bus
 PHPUNIT = vendor/bin/phpunit
 SERVICES_DST = config/services.yml
 SERVICES_SRC = vendor/icanboogie/message-bus/lib/Symfony/services.yaml
@@ -36,10 +35,9 @@ test-coveralls: test-dependencies
 
 .PHONY: test-container
 test-container:
-	@-docker-compose run --rm app84 bash
-	@docker-compose down -v
+	@-docker compose run --rm app84 bash
+	@docker compose down -v
 
 .PHONY: lint
 lint:
 	@XDEBUG_MODE=off phpcs -s
-	@XDEBUG_MODE=off vendor/bin/phpstan

@@ -40,7 +40,7 @@
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Test\\ICanBoogie\\Binding\\MessageBus\\": "tests/lib"
+			"Test\\ICanBoogie\\Binding\\MessageBus\\": "tests/src"
 		}
 	},
 	"extra": {
